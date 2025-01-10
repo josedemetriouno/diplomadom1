@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador360</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="traduccion.js" defer></script>
+</head>
+<body>
+
+    <!-- Botones de traducción -->
+    <div class="d-flex justify-content-between align-items-center text-white p-2" style="background-color: #808796;">
+        <div class="banner-text text-center w-300">
+            <h3 class="mb-0" data-es="Calculador 360" data-en="Calculador 360">Calculador 360</h3> 
+        </div>
+        <div class="position-absolute end-0 me-3">
+            <button id="btn-espanol" class="btn btn-primary me-0" data-es="Español" data-en="Spanish">Español</button>
+            <button id="btn-ingles" class="btn btn-secondary" data-es="Inglés" data-en="English">English</button>
+        </div>
+    </div>
+
+    <!-- Menú principal -->
+    <nav class="navbar navbar-expand-lg my-1" style="background-color: #3c4e7c;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" data-es="360" data-en="360">360</a>        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <ul id="menu" class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- El menú se carga dinámicamente -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="Caracteristicas">
+        <div class="Caracteristica">
+            
+<div class="container mt-4">
+    <h2 class="text-center" data-es="Sugerencias de tipo de vivienda" data-en="Housing Type Suggestions">Sugerencias de tipo de vivienda</h2>
+    <div class="row g-4">
+        <!-- Tarjetas -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="imagen/apartamento.jpg" class="card-img-top" alt="Apartamento" />
+                <div class="card-body">
+                    <h5 class="card-title" data-es="Apartamento" data-en="Apartment">Apartamento</h5>
+                    <p class="card-text" data-es="Un apartamento es ideal para personas que buscan una vivienda moderna y accesible." data-en="An apartment is ideal for people looking for a modern and affordable home.">
+                        Un apartamento es ideal para personas que buscan una vivienda moderna y accesible.
+                    </p>
+                    <a href="#" class="btn btn-primary" data-es="Ver más" data-en="See more">Ver más</a>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4">
+            <div class="card">
+                <img src="imagen/casa.jpg" class="card-img-top" alt="Casa" />
+                <div class="card-body">
+                    <h5 class="card-title" data-es="Casa" data-en="House">Casa</h5>
+                    <p class="card-text" data-es="Una casa es ideal para familias que desean más espacio y privacidad." data-en="A house is perfect for families looking for more space and privacy.">
+                        Una casa es ideal para familias que desean más espacio y privacidad.
+                    </p>
+                    <a href="#" class="btn btn-primary" data-es="Ver más" data-en="See more">Ver más</a>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-md-4">
+            <div class="card">
+                <img src="imagen/compartido.jpg" class="card-img-top" alt="Departamento compartido" />
+                <div class="card-body">
+                    <h5 class="card-title" data-es="Departamento compartido" data-en="Shared apartment">Departamento compartido</h5>
+                    <p class="card-text" data-es="Un departamento compartido es una opción económica para quienes buscan convivir y reducir costos." data-en="A shared apartment is an affordable option for those looking to live with others and reduce costs.">
+                        Un departamento compartido es una opción económica para quienes buscan convivir y reducir costos.
+                    </p>
+                    <a href="#" class="btn btn-primary" data-es="Ver más" data-en="See more">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+         </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Calculador360. <a href="#" data-es="Política de privacidad" data-en="Privacy Policy">Política de privacidad</a>.</p>
+    </footer>
+
+</body>
+</html>

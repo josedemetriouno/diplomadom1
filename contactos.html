@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador360</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="traduccion.js" defer></script>
+</head>
+<body>
+
+    <!-- Botones de traducción -->
+    <div class="d-flex justify-content-between align-items-center text-white p-2" style="background-color: #808796;">
+        <div class="banner-text text-center w-300">
+            <h3 class="mb-0" data-es="Calculador 360" data-en="Calculador 360">Calculador 360</h3> 
+        </div>
+        <div class="position-absolute end-0 me-3">
+            <button id="btn-espanol" class="btn btn-primary me-0" data-es="Español" data-en="Spanish">Español</button>
+            <button id="btn-ingles" class="btn btn-secondary" data-es="Inglés" data-en="English">English</button>
+        </div>
+    </div>
+
+    <!-- Menú principal -->
+    <nav class="navbar navbar-expand-lg my-1" style="background-color: #3c4e7c;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" data-es="360" data-en="360">360</a>        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <ul id="menu" class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- El menú se carga dinámicamente -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="Caracteristicas">
+        <div class="Caracteristica">
+            <!--aqui-->
+            <div class="container my-5">
+                <h1 data-es="Gestión de Contactos" data-en="Contact Management">Gestión de Contactos</h1>
+                <button id="abrirModal" class="btn btn-primary mb-3" data-es="Agregar Contacto" data-en="Add Contact">Agregar Contacto</button>
+            
+                <!-- Modal -->
+                <div id="miModal" class="modal" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="miModalLabel" data-es="Formulario de Contacto" data-en="Contact Form">Formulario de Contacto</h5>
+                                <button type="button" class="btn-close" id="cerrarModal" aria-label="Cerrar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="formularioContactos">
+                                    <div class="mb-3">
+                                        <label for="nombre" class="form-label" data-es="Nombre:" data-en="Name:">Nombre:</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label" data-es="Correo Electrónico:" data-en="Email:">Correo Electrónico:</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="telefono" class="form-label" data-es="Teléfono:" data-en="Phone:">Teléfono:</label>
+                                        <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="mensaje" class="form-label" data-es="Mensaje:" data-en="Message:">Mensaje:</label>
+                                        <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-success" data-es="Guardar Contacto" data-en="Save Contact">Guardar Contacto</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabla para mostrar los contactos -->
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped mt-3">
+                        <thead>
+                            <tr>
+                                <th data-es="#" data-en="#">3</th>
+                                <th data-es="Nombre" data-en="Name">Nombre</th>
+                                <th data-es="Correo Electrónico" data-en="Email">Correo Electrónico</th>
+                                <th data-es="Teléfono" data-en="Phone">Teléfono</th>
+                                <th data-es="Mensaje" data-en="Message">Mensaje</th>
+                                <th data-es="Acciones" data-en="Actions">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaContactos">
+                            <!-- Las filas de contactos se generan dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <script>
+                // Variables para el modal
+                const abrirModal = document.getElementById('abrirModal');
+                const cerrarModal = document.getElementById('cerrarModal');
+                const miModal = document.getElementById('miModal');
+                let contactos = JSON.parse(localStorage.getItem('contactos')) || [];
+            
+                // Funciones para el modal
+                abrirModal.addEventListener('click', () => miModal.style.display = 'block');
+                cerrarModal.addEventListener('click', () => miModal.style.display = 'none');
+                window.addEventListener('click', (evento) => {
+                    if (evento.target === miModal) miModal.style.display = 'none';
+                });
+            
+                // Traducir elementos al cambiar idioma
+                function traducirElementos(idioma) {
+                    document.querySelectorAll('[data-es], [data-en]').forEach((elemento) => {
+                        elemento.textContent = elemento.dataset[idioma];
+                    });
+                }
+            
+                // Cambiar idioma
+                document.getElementById('btn-espanol').addEventListener('click', () => {
+                    localStorage.setItem('idiomaSeleccionado', 'es');
+                    traducirElementos('es');
+                });
+                document.getElementById('btn-ingles').addEventListener('click', () => {
+                    localStorage.setItem('idiomaSeleccionado', 'en');
+                    traducirElementos('en');
+                });
+            
+                // Cargar idioma inicial
+                document.addEventListener('DOMContentLoaded', () => {
+                    const idiomaGuardado = localStorage.getItem('idiomaSeleccionado') || 'es';
+                    traducirElementos(idiomaGuardado);
+                });
+            
+                // Manejo del formulario y tabla
+                const formulario = document.getElementById('formularioContactos');
+                const tablaContactos = document.getElementById('tablaContactos');
+            
+                formulario.addEventListener('submit', (evento) => {
+                    evento.preventDefault();
+                    const nombre = document.getElementById('nombre').value;
+                    const email = document.getElementById('email').value;
+                    const telefono = document.getElementById('telefono').value;
+                    const mensaje = document.getElementById('mensaje').value;
+            
+                    contactos.push({ nombre, email, telefono, mensaje });
+                    localStorage.setItem('contactos', JSON.stringify(contactos));
+                    actualizarTabla();
+                    miModal.style.display = 'none';
+                    formulario.reset();
+                });
+            
+                function actualizarTabla() {
+                    tablaContactos.innerHTML = '';
+                    contactos.forEach((contacto, index) => {
+                        const fila = document.createElement('tr');
+                        fila.innerHTML = `
+                            <td>${index + 1}</td>
+                            <td>${contacto.nombre}</td>
+                            <td>${contacto.email}</td>
+                            <td>${contacto.telefono}</td>
+                            <td>${contacto.mensaje}</td>
+                            <td>
+                                <button class="btn btn-warning" data-es="Editar" data-en="Edit" onclick="editarContacto(${index})">Editar</button>
+                                <button class="btn btn-danger" data-es="Eliminar" data-en="Delete" onclick="eliminarContacto(${index})">Eliminar</button>
+                            </td>
+                        `;
+                        tablaContactos.appendChild(fila);
+                    });
+                }
+            
+                function eliminarContacto(index) {
+                    contactos.splice(index, 1);
+                    localStorage.setItem('contactos', JSON.stringify(contactos));
+                    actualizarTabla();
+                }
+            
+                function editarContacto(index) {
+                    const contacto = contactos[index];
+                    document.getElementById('nombre').value = contacto.nombre;
+                    document.getElementById('email').value = contacto.email;
+                    document.getElementById('telefono').value = contacto.telefono;
+                    document.getElementById('mensaje').value = contacto.mensaje;
+                    miModal.style.display = 'block';
+            
+                    formulario.onsubmit = (evento) => {
+                        evento.preventDefault();
+                        contactos[index] = {
+                            nombre: document.getElementById('nombre').value,
+                            email: document.getElementById('email').value,
+                            telefono: document.getElementById('telefono').value,
+                            mensaje: document.getElementById('mensaje').value
+                        };
+                        localStorage.setItem('contactos', JSON.stringify(contactos));
+                        actualizarTabla();
+                        miModal.style.display = 'none';
+                        formulario.reset();
+                        formulario.onsubmit = null;
+                    };
+                }
+            
+                window.onload = actualizarTabla;
+            </script>
+            
+        
+         </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Calculador360. <a href="#" data-es="Política de privacidad" data-en="Privacy Policy">Política de privacidad</a>.</p>
+    </footer>
+
+</body>
+</html>

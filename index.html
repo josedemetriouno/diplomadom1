@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador360</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="traduccion.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Botones de traducción -->
+    <div class="d-flex justify-content-between align-items-center text-white p-3" style="background-color: #808796;">
+        <div class="banner-text text-center w-300">
+            <h3 class="mb-0" data-es="Calculador 360" data-en="Calculador 360">Calculador 360</h3>
+        </div>
+        <div class="position-absolute end-0 me-3">
+            <button id="btn-espanol" class="btn btn-primary me-0" data-es="Español" data-en="Spanish">Español</button>
+            <button id="btn-ingles" class="btn btn-secondary" data-es="Inglés" data-en="English">English</button>
+        </div>
+    </div>
+
+    <!-- Menú principal -->
+    <nav class="navbar navbar-expand-lg my-1" style="background-color: #3c4e7c;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" data-es="360" data-en="360">360</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar"
+                aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <ul id="menu" class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- El menú se carga dinámicamente -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="Caracteristicas">
+        <div class="Caracteristica">
+            <!--aqui-->
+            <!-- Carrusel -->
+            <div id="contenido" class="relative w-full overflow-hidden p-4 bg-gray-50">
+                <div class="relative w-full h-[25vh]"> <!-- Ajuste la altura a la cuarta parte de la pantalla -->
+                    <!-- Contenedor de imágenes -->
+                    <div class="flex transition-transform duration-700 ease-in-out" id="carrusel">
+                        <img src="imagen/06.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 1">
+                        <img src="imagen/01.jpeg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 2">
+                        <img src="imagen/02.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 3">
+                        <img src="imagen/03.jpeg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 4">
+                        <img src="imagen/04.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 5">
+                        <img src="imagen/05.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 6">
+                    </div>
+                </div>
+
+                <!-- Botones de control -->
+                <div class="absolute top-1/2 left-4 transform -translate-y-1/2">
+                    <button id="prev" class="bg-gray-700 text-white px-3 py-2 rounded-full">&larr;</button>
+                </div>
+                <div class="absolute top-1/2 right-4 transform -translate-y-1/2">
+                    <button id="next" class="bg-gray-700 text-white px-3 py-2 rounded-full">&rarr;</button>
+                </div>
+            </div>
+
+            <!-- Script del carrusel -->
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const carrusel = document.getElementById('carrusel');
+                    const totalSlides = carrusel.children.length;
+                    const prevButton = document.getElementById('prev');
+                    const nextButton = document.getElementById('next');
+                    let indice = 0;
+
+                    // Función para actualizar el carrusel
+                    function actualizarCarrusel() {
+                        carrusel.style.transform = `translateX(-${indice * 100}%)`;
+                        carrusel.style.transition = 'transform 1s ease-in-out';
+                    }
+
+                    // Función para avanzar
+                    function avanzar() {
+                        indice = (indice + 1) % totalSlides;
+                        actualizarCarrusel();
+                    }
+
+                    // Función para retroceder
+                    function retroceder() {
+                        indice = (indice - 1 + totalSlides) % totalSlides;
+                        actualizarCarrusel();
+                    }
+
+                    // Eventos de los botones
+                    nextButton.addEventListener('click', avanzar);
+                    prevButton.addEventListener('click', retroceder);
+
+                    // Rotación automática cada 3 segundos
+                    setInterval(avanzar, 3000);
+                });
+            </script>
+
+            <!-- Características -->
+            <section class="Caracteristicas">
+                <div class="Caracteristica">
+                    <img src="imagen/principal.png" alt="Análisis de necesidades">
+                    <h2 class="traducible" data-es="Análisis de Necesidades" data-en="Needs Analysis">Análisis de
+                        Necesidades</h2>
+                    <p class="traducible" data-es="Identificamos tus preferencias para encontrar la casa ideal."
+                        data-en="We identify your preferences to find the ideal home.">
+                        Identificamos tus preferencias para encontrar la casa ideal.
+                    </p>
+                </div>
+                <div class="Caracteristica">
+                    <img src="imagen/servicios_tecnologicos.jpg" alt="Comparación de opciones">
+                    <h2 class="traducible" data-es="Comparación de Opciones" data-en="Option Comparison">Comparación de
+                        Opciones</h2>
+                    <p class="traducible" data-es="Compara diferentes casas según tus criterios específicos."
+                        data-en="Compare different homes based on your specific criteria.">
+                        Compara diferentes casas según tus criterios específicos.
+                    </p>
+                </div>
+                <div class="Caracteristica">
+                    <img src="imagen/principal1.jpg" alt="Recomendaciones personalizadas">
+                    <h2 class="traducible" data-es="Recomendaciones Personalizadas"
+                        data-en="Personalized Recommendations">Recomendaciones Personalizadas</h2>
+                    <p class="traducible" data-es="Recibe sugerencias adaptadas a tus necesidades y presupuesto."
+                        data-en="Get suggestions tailored to your needs and budget.">
+                        Recibe sugerencias adaptadas a tus necesidades y presupuesto.
+                    </p>
+                </div>
+            </section>
+
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Calculador360. <a href="#" data-es="Política de privacidad" data-en="Privacy Policy">Política de
+                privacidad</a>.</p>
+    </footer>
+
+</body>
+
+</html>

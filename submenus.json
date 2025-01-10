@@ -1,0 +1,49 @@
+{
+    "Inicio": [
+        {"nombre": "Descripción del calculador de preferencias de casa", "nombre_en": "Description of the house preference calculator", "enlace": "descripción.html"},
+        {"nombre": "Qué puedes lograr con la herramienta", "nombre_en": "What you can achieve with the tool", "enlace": "lograr.html"},
+        {"nombre": "Cómo funciona el calculador", "nombre_en": "How the calculator works", "enlace": "funcion.html"},
+        {"nombre": "Preguntas frecuentes", "nombre_en": "Frequently asked questions", "enlace": "Preguntas.html"}
+    ],
+    "Formulario de Preferencias": [
+        {"nombre": "Llenar formulario", "nombre_en": "Fill out form", "enlace": "llenarformulario.html"}
+      
+    ],
+    "Resultados": [
+        {"nombre": "Sugerencias de tipo de vivienda", "nombre_en": "Suggestions for housing types", "enlace": "sugerencias.html"},
+        {"nombre": "Opciones según presupuesto y ubicación", "nombre_en": "Options based on budget and location", "enlace": "presupuesto.html"},
+        {"nombre": "Consejos sobre la compra de casa", "nombre_en": "Tips on buying a home", "enlace": "#Consejos sobre la compra de casa"},
+        {"nombre": "Comparativa de precios en diferentes ubicaciones", "nombre_en": "Price comparison in different locations", "enlace": "#Comparativa de precios en diferentes ubicaciones"}
+    ],
+    "Recomendaciones": [
+        {"nombre": "Artículos sobre cómo elegir tu hogar", "nombre_en": "Articles on how to choose your home", "enlace": "artículos.html"},
+        {"nombre": "Videos sobre cómo financiar una casa", "nombre_en": "Videos on how to finance a home", "enlace": "financiar.html"},
+        {"nombre": "Consejos de expertos sobre la compra de propiedades", "nombre_en":"Expert advice on buying property", "enlace": "consejos.html"},
+        {"nombre": "Recomendaciones para mudanzas", "nombre_en": "Recommendations for moving", "enlace": "#Recomendaciones para mudanzas"}
+    ],
+    "Comunidad": [
+        {"nombre": "Foros sobre compra de vivienda", "nombre_en": "Home Buying Forums", "enlace": "foros.html"},
+        {"nombre": "Encuentros de personas interesadas en inmuebles", "nombre_en": "Meetings of people interested in real estate", "enlace": "encuentros.html"},
+        {"nombre": "Consejos para la primera compra de casa", "nombre_en": "Tips for your first home purchase", "enlace": "#Consejos para la primera compra de casa"},
+        {"nombre": "Discusiones sobre opciones de financiamiento", "nombre_en": "Discussions on financing options", "enlace": "#Discusiones sobre opciones de financiamiento"}
+    ],
+    "Extras": [
+        {"nombre": "Videos sobre tours de casas", "nombre_en": "Videos about house tours", "enlace": "video.html"},
+        {"nombre": "Artículos sobre la búsqueda de vivienda en línea", "nombre_en": "Articles about searching for housing online", "enlace": "busqueda.html"},
+        {"nombre": "Consejos sobre decoración de interiores", "nombre_en": "Tips on interior decoration", "enlace": "#Consejos sobre decoración de interiores"},
+        {"nombre": "Recomendaciones sobre hipotecas", "nombre_en": "Recommendations on mortgages", "enlace": "#Recomendaciones sobre hipotecas"}
+    ],
+    "FAQ": [
+        {"nombre": "¿Puedo modificar mis respuestas?", "nombre_en": "Can I modify my answers?", "enlace": "modificar.html"},
+        {"nombre": "¿Puedo ver más detalles sobre las viviendas sugeridas?", "nombre_en": "Can I see more details about the suggested homes?", "enlace": "detalles.html"},
+        {"nombre": "¿Cómo obtener más ayuda en la compra de mi casa?", "nombre_en": "How can I get more help with my home purchase?", "enlace": "#¿Cómo obtener más ayuda en la compra de mi casa?"},
+        {"nombre": "Contactar soporte", "nombre_en": "Contact support", "enlace": "#Contactar soporte"}
+    ],
+    "Contacto": [
+        {"nombre": "Formulario de contacto", "nombre_en": "Contact form", "enlace": "contactos.html"},
+        {"nombre": "Redes sociales", "nombre_en": "Social networks", "enlace": "resocial.html"},
+        {"nombre": "Feedback y sugerencias", "nombre_en": "Feedback and suggestions", "enlace": "#Feedback y sugerencias"}
+        
+        
+    ]
+}

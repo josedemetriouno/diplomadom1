@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+    <opcion>
+        <nombre es="Inicio" en="Home">Inicio</nombre>
+    </opcion>
+    <opcion>
+        <nombre es="Formulario de Preferencias" en="Preferences Form">Formulario de Preferencias</nombre>
+    </opcion>
+    <opcion>
+        <nombre es="Resultados" en="Results">Resultado</nombre>
+    </opcion>
+    <opcion>
+        <nombre es="Recomendaciones" en="Recommendations">Recomendaciones</nombre>
+    </opcion>
+    <opcion>
+        <nombre es="Comunidad" en="Community">Comunidad</nombre>
+    </opcion>
+    <opcion>
+        <nombre es="Extras" en="Extras">Extras</nombre>
+    </opcion>
+    <opcion>
+        <nombre es="FAQ" en="FAQ">FAQ</nombre>
+    </opcion>
+    <opcion>
+        <nombre es="Contacto" en="Contact">Contacto</nombre>
+    </opcion>
+</menu>
+

@@ -1,0 +1,146 @@
+/* Estilos básicos */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #0a0303;
+}
+
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 150px;
+}
+
+
+.Caracteristicas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 10px;
+    background-color: #cbd7dd;
+}
+
+.Caracteristica {
+    flex: 1 1 300px;
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    background: rgb(252, 252, 253);
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Caracteristica img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #808796;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #295333;
+    text-decoration: none;
+}
+
+
+
+/* Menú principal */
+#menu-principal {
+    background-color: #070b0c;
+    padding: 10px 0;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu li {
+    position: relative;
+}
+
+#menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+#menu a:hover {
+    background-color: #e70b0b;
+    border-radius: 5px;
+}
+
+/* Submenús */
+#menu li ul {
+    display: none;
+    position: absolute;
+    background-color: #203655;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    top: 100%;
+    left: 0;
+}
+
+#menu li:hover ul {
+    display: block;
+}
+
+#menu li ul li a {
+    padding: 10px;
+    white-space: nowrap;
+}
+
+#menu li ul li a:hover {
+    background-color: #e70b0b;
+}
+
+/* Contenido principal */
+#contenido {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#contenido h1 {
+    font-size: 2.5em;
+}
+
+#contenido p {
+    font-size: 1.2em;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    #menu {
+        flex-direction: column;
+    }
+
+    #menu a {
+        text-align: center;
+    }
+
+    #traduccion {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    #traduccion button {
+        margin: 5px 0;
+    }
+}
