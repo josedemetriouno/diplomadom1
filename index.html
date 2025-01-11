@@ -15,7 +15,7 @@
 
 <body>
 
-    <!-- Botones de traducción -->
+    
     <div class="d-flex justify-content-between align-items-center text-white p-3" style="background-color: #808796;">
         <div class="banner-text text-center w-300">
             <h3 class="mb-0" data-es="Calculador 360" data-en="Calculador 360">Calculador 360</h3>
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <!-- Menú principal -->
+    
     <nav class="navbar navbar-expand-lg my-1" style="background-color: #3c4e7c;">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html" data-es="360" data-en="360">360</a>
@@ -37,7 +37,7 @@
 
             <div class="collapse navbar-collapse" id="menuNavbar">
                 <ul id="menu" class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- El menú se carga dinámicamente -->
+                    
                 </ul>
             </div>
         </div>
@@ -45,11 +45,9 @@
 
     <section class="Caracteristicas">
         <div class="Caracteristica">
-            <!--aqui-->
-            <!-- Carrusel -->
+            
             <div id="contenido" class="relative w-full overflow-hidden p-4 bg-gray-50">
-                <div class="relative w-full h-[25vh]"> <!-- Ajuste la altura a la cuarta parte de la pantalla -->
-                    <!-- Contenedor de imágenes -->
+                <div class="relative w-full h-[25vh]"> 
                     <div class="flex transition-transform duration-700 ease-in-out" id="carrusel">
                         <img src="imagen/06.jpg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 1">
                         <img src="imagen/01.jpeg" class="w-full h-full object-cover flex-shrink-0" alt="Slide 2">
@@ -60,7 +58,7 @@
                     </div>
                 </div>
 
-                <!-- Botones de control -->
+                
                 <div class="absolute top-1/2 left-4 transform -translate-y-1/2">
                     <button id="prev" class="bg-gray-700 text-white px-3 py-2 rounded-full">&larr;</button>
                 </div>
@@ -69,7 +67,7 @@
                 </div>
             </div>
 
-            <!-- Script del carrusel -->
+            
             <script>
                 document.addEventListener('DOMContentLoaded', () => {
                     const carrusel = document.getElementById('carrusel');
@@ -78,34 +76,34 @@
                     const nextButton = document.getElementById('next');
                     let indice = 0;
 
-                    // Función para actualizar el carrusel
+                    
                     function actualizarCarrusel() {
                         carrusel.style.transform = `translateX(-${indice * 100}%)`;
                         carrusel.style.transition = 'transform 1s ease-in-out';
                     }
 
-                    // Función para avanzar
+                    
                     function avanzar() {
                         indice = (indice + 1) % totalSlides;
                         actualizarCarrusel();
                     }
 
-                    // Función para retroceder
+                    
                     function retroceder() {
                         indice = (indice - 1 + totalSlides) % totalSlides;
                         actualizarCarrusel();
                     }
 
-                    // Eventos de los botones
+                    
                     nextButton.addEventListener('click', avanzar);
                     prevButton.addEventListener('click', retroceder);
 
-                    // Rotación automática cada 3 segundos
+                    
                     setInterval(avanzar, 3000);
                 });
             </script>
 
-            <!-- Características -->
+            
             <section class="Caracteristicas">
                 <div class="Caracteristica">
                     <img src="imagen/principal.png" alt="Análisis de necesidades">

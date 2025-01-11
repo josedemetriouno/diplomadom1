@@ -1,7 +1,7 @@
-// Leer y cargar el menú desde menu.xml y submenus.json
+
 document.addEventListener('DOMContentLoaded', () => {
-    const idiomaGuardado = localStorage.getItem('idiomaSeleccionado') || 'es'; // Idioma predeterminado: español
-    cargarMenu().then(() => traducirMenu(idiomaGuardado)); // Traducir menú según el idioma guardado
+    const idiomaGuardado = localStorage.getItem('idiomaSeleccionado') || 'es'; 
+    cargarMenu().then(() => traducirMenu(idiomaGuardado)); 
 });
 
 async function cargarMenu() {
@@ -17,7 +17,7 @@ async function cargarMenu() {
         const datosSubmenus = await respuestaJSON.json();
 
         const menuContenedor = document.getElementById('menu');
-        menuContenedor.innerHTML = ''; // Limpiar el contenido previo
+        menuContenedor.innerHTML = ''; 
 
         xmlDoc.querySelectorAll('opcion').forEach((opcion) => {
             const nombreOpcionEs = opcion.querySelector('nombre').getAttribute('es');
@@ -28,7 +28,7 @@ async function cargarMenu() {
 
             const enlace = document.createElement('a');
             enlace.classList.add('nav-link', 'dropdown-toggle');
-            enlace.textContent = nombreOpcionEs; // Valor por defecto en español
+            enlace.textContent = nombreOpcionEs; 
             enlace.href = '#';
             enlace.setAttribute('data-bs-toggle', 'dropdown');
             enlace.setAttribute('aria-expanded', 'false');
@@ -64,10 +64,10 @@ async function cargarMenu() {
     }
 }
 
-// Función para traducir el menú y submenús
+
 async function traducirMenu(idioma) {
     try {
-        // Traducir menú principal
+        
         const menuItems = document.querySelectorAll('#menu > li > a');
         menuItems.forEach((item) => {
             if (item.dataset[idioma]) {
@@ -77,7 +77,7 @@ async function traducirMenu(idioma) {
             }
         });
 
-        // Traducir submenús
+        
         const subMenuItems = document.querySelectorAll('#menu .dropdown-menu .dropdown-item');
         subMenuItems.forEach((item) => {
             if (item.dataset[idioma]) {
@@ -87,7 +87,7 @@ async function traducirMenu(idioma) {
             }
         });
 
-        // Traducir elementos estáticos (encabezados, párrafos, etc.)
+        
         const elementosTraducibles = document.querySelectorAll('[data-es], [data-en]');
         elementosTraducibles.forEach((elemento) => {
             if (elemento.dataset[idioma]) {
@@ -99,13 +99,13 @@ async function traducirMenu(idioma) {
     }
 }
 
-// Cambiar idioma y traducir
+
 document.getElementById('btn-espanol').addEventListener('click', () => {
-    localStorage.setItem('idiomaSeleccionado', 'es'); // Guardar idioma seleccionado
+    localStorage.setItem('idiomaSeleccionado', 'es'); 
     traducirMenu('es');
 });
 
 document.getElementById('btn-ingles').addEventListener('click', () => {
-    localStorage.setItem('idiomaSeleccionado', 'en'); // Guardar idioma seleccionado
+    localStorage.setItem('idiomaSeleccionado', 'en'); 
     traducirMenu('en');
 });

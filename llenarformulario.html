@@ -14,7 +14,7 @@
 
 <body>
 
-    <!-- Botones de traducción -->
+   
     <div class="d-flex justify-content-between align-items-center text-white p-2" style="background-color: #808796;">
         <div class="banner-text text-center w-300">
             <h3 class="mb-0" data-es="Calculador 360" data-en="Calculador 360">Calculador 360</h3>
@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <!-- Menú principal -->
+    
     <nav class="navbar navbar-expand-lg my-1" style="background-color: #3c4e7c;">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html" data-es="360" data-en="360">360</a>
@@ -36,7 +36,7 @@
 
             <div class="collapse navbar-collapse" id="menuNavbar">
                 <ul id="menu" class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- El menú se carga dinámicamente -->
+                    
                 </ul>
             </div>
         </div>
@@ -48,7 +48,7 @@
                 <h1 data-es="Gestión de Preferencias" data-en="Preference Management">Gestión de Preferencias</h1>
                 <button id="abrirModal" class="btn btn-primary mb-3" data-es="Llenar Formulario" data-en="Fill Form">Llenar Formulario</button>
             
-                <!-- Modal -->
+                
                 <div id="miModal" class="modal" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -85,7 +85,7 @@
                     </div>
                 </div>
             
-                <!-- Tabla para mostrar las preferencias -->
+                
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped mt-3">
                         <thead>
@@ -99,14 +99,14 @@
                             </tr>
                         </thead>
                         <tbody id="tablaPreferencias">
-                            <!-- Las filas de preferencias se generan dinámicamente -->
+                           
                         </tbody>
                     </table>
                 </div>
             </div>
             
             <script>
-                // Función para cambiar el idioma
+                
                 function cambiarIdioma(idioma) {
                     document.querySelectorAll('[data-es]').forEach((elemento) => {
                         const texto = elemento.getAttribute(`data-${idioma}`);
@@ -122,65 +122,65 @@
                     });
                 }
             
-                // Detectar el idioma predeterminado o cambiarlo manualmente
+                
                 let idiomaActual = 'es';
-                cambiarIdioma(idiomaActual); // Cambiar al idioma predeterminado
+                cambiarIdioma(idiomaActual); 
             
-                // Variables para el modal
+                
                 const abrirModal = document.getElementById('abrirModal');
                 const cerrarModal = document.getElementById('cerrarModal');
                 const miModal = document.getElementById('miModal');
             
-                // Lista de preferencias (simulación de almacenamiento en JSON)
+                
                 let preferencias = JSON.parse(localStorage.getItem('preferencias')) || [];
             
-                // Abrir el modal
+                
                 abrirModal.addEventListener('click', () => {
                     miModal.style.display = 'block';
                 });
             
-                // Cerrar el modal
+                
                 cerrarModal.addEventListener('click', () => {
                     miModal.style.display = 'none';
                 });
             
-                // Cerrar el modal al hacer clic fuera de él
+                
                 window.addEventListener('click', (evento) => {
                     if (evento.target === miModal) {
                         miModal.style.display = 'none';
                     }
                 });
             
-                // Manejar el formulario
+                
                 const formulario = document.getElementById('formularioPreferencias');
                 const tablaPreferencias = document.getElementById('tablaPreferencias');
             
                 formulario.addEventListener('submit', (evento) => {
                     evento.preventDefault();
             
-                    // Recoger los datos del formulario
+                    
                     const habitaciones = document.getElementById('habitaciones').value;
                     const estilo = document.getElementById('estilo').value;
                     const ubicacion = document.getElementById('ubicacion').value;
                     const presupuesto = document.getElementById('presupuesto').value;
             
-                    // Agregar los datos al array de preferencias
+                    
                     preferencias.push({ habitaciones, estilo, ubicacion, presupuesto });
             
-                    // Guardar en el almacenamiento local (simulación de JSON)
+                    
                     localStorage.setItem('preferencias', JSON.stringify(preferencias));
             
-                    // Actualizar la tabla
+                    
                     actualizarTabla();
             
-                    // Cerrar el modal después de enviar el formulario
+                    
                     miModal.style.display = 'none';
             
-                    // Limpiar el formulario
+                    
                     formulario.reset();
                 });
             
-                // Función para actualizar la tabla
+                
                 function actualizarTabla() {
                     tablaPreferencias.innerHTML = '';
                     preferencias.forEach((preferencia, index) => {
@@ -200,27 +200,27 @@
                     });
                 }
             
-                // Función para eliminar una preferencia
+                
                 function eliminarPreferencia(index) {
                     preferencias.splice(index, 1);
-                    localStorage.setItem('preferencias', JSON.stringify(preferencias)); // Guardar cambios
+                    localStorage.setItem('preferencias', JSON.stringify(preferencias));
                     actualizarTabla();
                 }
             
-                // Función para editar una preferencia
+                
                 function editarPreferencia(index) {
                     const preferencia = preferencias[index];
             
-                    // Llenar el formulario con los datos existentes
+                    
                     document.getElementById('habitaciones').value = preferencia.habitaciones;
                     document.getElementById('estilo').value = preferencia.estilo;
                     document.getElementById('ubicacion').value = preferencia.ubicacion;
                     document.getElementById('presupuesto').value = preferencia.presupuesto;
             
-                    // Mostrar el modal
+                    
                     miModal.style.display = 'block';
             
-                    // Al enviar el formulario, actualizar la preferencia
+                    
                     formulario.onsubmit = (evento) => {
                         evento.preventDefault();
             
@@ -231,15 +231,15 @@
                             presupuesto: document.getElementById('presupuesto').value,
                         };
             
-                        localStorage.setItem('preferencias', JSON.stringify(preferencias)); // Guardar cambios
+                        localStorage.setItem('preferencias', JSON.stringify(preferencias)); 
                         actualizarTabla();
                         miModal.style.display = 'none';
                         formulario.reset();
-                        formulario.onsubmit = null; // Restablecer el evento submit
+                        formulario.onsubmit = null; 
                     };
                 }
             
-                // Cargar preferencias al inicio
+                
                 window.onload = actualizarTabla;
             </script>
             

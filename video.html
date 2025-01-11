@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +11,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="traduccion.js" defer></script>
 </head>
+
 <body>
 
-    <!-- Botones de traducción -->
+
     <div class="d-flex justify-content-between align-items-center text-white p-2" style="background-color: #808796;">
         <div class="banner-text text-center w-300">
-            <h3 class="mb-0" data-es="Calculador 360" data-en="Calculador 360">Calculador 360</h3> 
+            <h3 class="mb-0" data-es="Calculador 360" data-en="Calculador 360">Calculador 360</h3>
         </div>
         <div class="position-absolute end-0 me-3">
             <button id="btn-espanol" class="btn btn-primary me-0" data-es="Español" data-en="Spanish">Español</button>
@@ -23,121 +25,152 @@
         </div>
     </div>
 
-    <!-- Menú principal -->
+
     <nav class="navbar navbar-expand-lg my-1" style="background-color: #3c4e7c;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html" data-es="360" data-en="360">360</a>        
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="index.html" data-es="360" data-en="360">360</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar"
+                aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="menuNavbar">
                 <ul id="menu" class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- El menú se carga dinámicamente -->
+
                 </ul>
             </div>
         </div>
     </nav>
-    
+
     <section class="Caracteristicas">
         <div class="Caracteristica">
-            
-               
-<div class="container mt-4">
-    <h2 class="text-center" data-es="Videos sobre tours de casas" data-en="Videos on House Tours">Videos sobre tours de casas</h2>
-    <div class="row g-4">
-        <!-- 1 -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card shadow-sm border-light rounded" data-bs-toggle="modal" data-bs-target="#videoModal1">
-                <img src="imagen/moderno.jpg" class="card-img-top" alt="Tour de Casa 1" />
-                <div class="card-body">
-                    <h5 class="card-title" data-es="Tour por casa moderna" data-en="Modern House Tour">Tour por casa moderna</h5>
-                    <p class="card-text" data-es="Explora una casa moderna con características de diseño minimalista." data-en="Explore a modern home with minimalist design features.">
-                        Explora una casa moderna con características de diseño minimalista.
-                    </p>
+
+
+            <div class="container mt-4">
+                <h2 class="text-center" data-es="Videos sobre tours de casas" data-en="Videos on House Tours">Videos
+                    sobre tours de casas</h2>
+                <div class="row g-4">
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm border-light rounded" data-bs-toggle="modal"
+                            data-bs-target="#videoModal1">
+                            <img src="imagen/moderno.jpg" class="card-img-top" alt="Tour de Casa 1" />
+                            <div class="card-body">
+                                <h5 class="card-title" data-es="Tour por casa moderna" data-en="Modern House Tour">Tour
+                                    por casa moderna</h5>
+                                <p class="card-text"
+                                    data-es="Explora una casa moderna con características de diseño minimalista."
+                                    data-en="Explore a modern home with minimalist design features.">
+                                    Explora una casa moderna con características de diseño minimalista.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm border-light rounded" data-bs-toggle="modal"
+                            data-bs-target="#videoModal2">
+                            <img src="imagen/jardin.jpg" class="card-img-top" alt="Tour de Casa 2" />
+                            <div class="card-body">
+                                <h5 class="card-title" data-es="Tour por casa con jardín"
+                                    data-en="House with Garden Tour">Tour por casa con jardín</h5>
+                                <p class="card-text"
+                                    data-es="Descubre una casa con un hermoso jardín y áreas exteriores."
+                                    data-en="Discover a house with a beautiful garden and outdoor spaces.">
+                                    Descubre una casa con un hermoso jardín y áreas exteriores.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm border-light rounded" data-bs-toggle="modal"
+                            data-bs-target="#videoModal3">
+                            <img src="imagen/lujo.jpg" class="card-img-top" alt="Tour de Casa 3" />
+                            <div class="card-body">
+                                <h5 class="card-title" data-es="Tour por casa de lujo" data-en="Luxury Home Tour">Tour
+                                    por casa de lujo</h5>
+                                <p class="card-text"
+                                    data-es="Acompáñanos en un tour por una casa de lujo con vistas panorámicas."
+                                    data-en="Join us for a tour of a luxury home with panoramic views.">
+                                    Acompáñanos en un tour por una casa de lujo con vistas panorámicas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- 2 -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card shadow-sm border-light rounded" data-bs-toggle="modal" data-bs-target="#videoModal2">
-                <img src="imagen/jardin.jpg" class="card-img-top" alt="Tour de Casa 2" />
-                <div class="card-body">
-                    <h5 class="card-title" data-es="Tour por casa con jardín" data-en="House with Garden Tour">Tour por casa con jardín</h5>
-                    <p class="card-text" data-es="Descubre una casa con un hermoso jardín y áreas exteriores." data-en="Discover a house with a beautiful garden and outdoor spaces.">
-                        Descubre una casa con un hermoso jardín y áreas exteriores.
-                    </p>
+
+            <div class="modal fade" id="videoModal1" tabindex="-1" aria-labelledby="videoModalLabel1"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="videoModalLabel1">Tour por casa moderna</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe width="100%" height="400"
+                                src="https://www.youtube.com/embed/3Zzx_uxnj2U?si=nLm60vMjgzhCeM4n"
+                                title="Tour de Casa 1" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!--3 -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card shadow-sm border-light rounded" data-bs-toggle="modal" data-bs-target="#videoModal3">
-                <img src="imagen/lujo.jpg" class="card-img-top" alt="Tour de Casa 3" />
-                <div class="card-body">
-                    <h5 class="card-title" data-es="Tour por casa de lujo" data-en="Luxury Home Tour">Tour por casa de lujo</h5>
-                    <p class="card-text" data-es="Acompáñanos en un tour por una casa de lujo con vistas panorámicas." data-en="Join us for a tour of a luxury home with panoramic views.">
-                        Acompáñanos en un tour por una casa de lujo con vistas panorámicas.
-                    </p>
+
+            <div class="modal fade" id="videoModal2" tabindex="-1" aria-labelledby="videoModalLabel2"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="videoModalLabel2">Tour por casa con jardín</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe width="100%" height="400"
+                                src="https://www.youtube.com/embed/I5SWfj7nyJM?si=fuq1WixvNulCWXoJ"
+                                title="Tour de Casa 2" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 
-<!-- Modal para Video 1 -->
-<div class="modal fade" id="videoModal1" tabindex="-1" aria-labelledby="videoModalLabel1" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="videoModalLabel1">Tour por casa moderna</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <iframe width="100%" height="400" src="https://www.youtube.com/embed/3Zzx_uxnj2U?si=nLm60vMjgzhCeM4n" title="Tour de Casa 1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Modal para Video 2 -->
-<div class="modal fade" id="videoModal2" tabindex="-1" aria-labelledby="videoModalLabel2" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="videoModalLabel2">Tour por casa con jardín</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal fade" id="videoModal3" tabindex="-1" aria-labelledby="videoModalLabel3"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="videoModalLabel3">Tour por casa de lujo</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe width="100%" height="400"
+                                src="https://www.youtube.com/embed/5r2oUP9dwb4?si=ogdma549v7kUl5Pr"
+                                title="Tour de Casa 3" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-                <iframe width="100%" height="400" src="https://www.youtube.com/embed/I5SWfj7nyJM?si=fuq1WixvNulCWXoJ" title="Tour de Casa 2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Modal para Video 3 -->
-<div class="modal fade" id="videoModal3" tabindex="-1" aria-labelledby="videoModalLabel3" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="videoModalLabel3">Tour por casa de lujo</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <iframe width="100%" height="400" src="https://www.youtube.com/embed/5r2oUP9dwb4?si=ogdma549v7kUl5Pr" title="Tour de Casa 3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
         </div>
-    </div>
-</div>
-
-         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Calculador360. <a href="#" data-es="Política de privacidad" data-en="Privacy Policy">Política de privacidad</a>.</p>
+        <p>&copy; 2025 Calculador360. <a href="#" data-es="Política de privacidad" data-en="Privacy Policy">Política de
+                privacidad</a>.</p>
     </footer>
 
 </body>
+
 </html>

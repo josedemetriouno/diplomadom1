@@ -1,4 +1,4 @@
-/* Estilos básicos */
+
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -56,7 +56,7 @@ footer a {
 
 
 
-/* Menú principal */
+
 #menu-principal {
     background-color: #070b0c;
     padding: 10px 0;
@@ -86,7 +86,6 @@ footer a {
     border-radius: 5px;
 }
 
-/* Submenús */
 #menu li ul {
     display: none;
     position: absolute;
@@ -111,7 +110,7 @@ footer a {
     background-color: #e70b0b;
 }
 
-/* Contenido principal */
+
 #contenido {
     text-align: center;
     margin-top: 20px;
@@ -125,7 +124,7 @@ footer a {
     font-size: 1.2em;
 }
 
-/* Responsividad */
+
 @media (max-width: 768px) {
     #menu {
         flex-direction: column;
